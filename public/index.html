@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fundo do Mar — Mistérios do Fundo do Mar</title>
+  <meta name="description" content="O fundo do mar é um dos ecossistemas mais fascinantes e menos explorados do planeta. Este site explora sua diversidade, importância e ameaças, propondo formas de preservação." />
+  <meta name="author" content="Equipe CAOS — Bella, Arthur, Marcos" />
+  <link rel="icon" href="#" />
+  <link rel="stylesheet" href="style.css">
+ <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+ 
+  
+</head>
+<body>
+  <!-- TODO: alterar informações da equipe/nome do projeto se necessário -->
+  <header role="banner" aria-label="Cabeçalho do site">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">CAOS</div>
+      <div>
+        <div style="font-weight:700; color:var(--muted)">Equipe CAOS</div>
+        <div class="small">Bella • Arthur • Marcos</div>
+      </div>
+    </div>
+
+    <nav role="navigation" aria-label="Navegação principal">
+      <a href="#curiosidades">Curiosidades</a>
+      <a href="#fatos">Fatos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="controls" role="region" aria-label="Controles do site">
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="titulo-principal">
+      <article class="intro">
+        <h1 id="titulo-principal">Fundo do Mar</h1>
+        <h2 class="small" style="margin-top:6px; font-weight:700; color:var(--muted)">mergulhe na beleza do fundo do mar, preserve o que é vital.</h2>
+        <p class="lead">
+          O fundo do mar é um dos ecossistemas mais fascinantes e menos explorados do planeta. Abriga uma diversidade impressionante de vida marinha e enfrenta desafios como poluição e mudanças climáticas.
+        </p>
+
+        <div class="btn-row" role="group" aria-label="Ações do herói">
+          <button class="btn" id="abrirIA" aria-label="Iniciar reconhecimento facial">Reconhecimento Facial</button>
+          <button class="btn cta" id="btnAbrirChatbot" aria-controls="chatbotPanel">Abrir Chatbot</button>
+        </div>
+
+        <p class="small" style="margin-top:12px;">Navegue: <a href="#curiosidades">Curiosidades</a> • <a href="#fatos">Fatos</a> • <a href="#galeria">Galeria</a> • <a href="#faq">FAQ</a></p>
+      </article>
+
+      <figure class="hero-img" role="img" aria-label="Imagem do fundo do mar">
+        <!-- IMAGEM HERO -->
+        <!-- TODO: substituir URL_IMAGEM_HERO se desejar outra imagem local/URL -->
+        <img src="https://plus.unsplash.com/premium_photo-1749297157352-0ad5efaa1e2a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWlzdCVDMyVBOXJpb3MlMjBkbyUyMGZ1bmRvJTIwZG8lMjBtYXJ8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="Visão artística do fundo do mar com vida marinha" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- CURIOSIDADES -->
+    <section id="curiosidades" aria-labelledby="curiosidades-title">
+      <h2 id="curiosidades-title" style="color:var(--accent);">Curiosidades</h2>
+      <div class="icon-list" role="list">
+        <!-- 3-5 itens -->
+        <div class="icon-item" role="listitem">
+          <div class="icon-bullet" aria-hidden="true">1</div>
+          <div>
+            <div style="font-weight:700">Mais de 80% inexplorado</div>
+            <div class="small">Mais de 80% do fundo do mar ainda não foi explorado.</div>
+          </div>
+        </div>
+
+        <div class="icon-item" role="listitem">
+          <div class="icon-bullet" aria-hidden="true">2</div>
+          <div>
+            <div style="font-weight:700">Montanhas submarinas</div>
+            <div class="small">Existem montanhas submarinas maiores que o Monte Everest.</div>
+          </div>
+        </div>
+
+        <div class="icon-item" role="listitem">
+          <div class="icon-bullet" aria-hidden="true">3</div>
+          <div>
+            <div style="font-weight:700">Rios e cachoeiras</div>
+            <div class="small">No fundo do mar há rios e cachoeiras de água salgada causados por diferenças de salinidade e temperatura.</div>
+          </div>
+        </div>
+
+        <div class="icon-item" role="listitem">
+          <div class="icon-bullet" aria-hidden="true">4</div>
+          <div>
+            <div style="font-weight:700">Bioluminescência</div>
+            <div class="small">Alguns peixes e invertebrados produzem sua própria luz para enxergar e caçar.</div>
+          </div>
+        </div>
+
+        <div class="icon-item" role="listitem">
+          <div class="icon-bullet" aria-hidden="true">5</div>
+          <div>
+            <div style="font-weight:700">Fossa das Marianas</div>
+            <div class="small">O ponto mais profundo conhecido é a Fossa das Marianas, ~11.000 metros de profundidade.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATOS / CIÊNCIA -->
+    <section id="fatos" aria-labelledby="fatos-title">
+      <h2 id="fatos-title" style="color:var(--accent);">Fatos e Ciência</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem" aria-labelledby="f1">
+          <h3 id="f1">Exploração limitada</h3>
+          <p class="small">Cerca de 80% do fundo marinho permanece desconhecido devido à pressão extrema e ao custo de exploração, exigindo veículos robóticos especializados.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="f2">
+          <h3 id="f2">Criaturas bioluminescentes</h3>
+          <p class="small">Muitas espécies produzem luz própria para comunicação, camuflagem e caça — um mecanismo adaptativo comum nas zonas escuras profundas.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="f3">
+          <h3 id="f3">Vulcões submarinos</h3>
+          <p class="small">Existem milhares de vulcões subaquáticos ativos que moldam a geologia oceânica e afetam correntes e ecossistemas locais.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" aria-labelledby="galeria-title">
+      <h2 id="galeria-title" style="color:var(--accent);">Galeria</h2>
+      <div class="gallery" role="list">
+        <figure role="listitem">
+          <img src="https://marsemfim.com.br/wp-content/uploads/2021/01/mergulho-para-a-serie-oceanos-e-seus-misterios-1.jpg" alt="Mergulhador próximo a recife coral" loading="lazy" />
+          <figcaption class="small muted">Mergulho e recifes — Coral saudável no Pacífico</figcaption>
+        </figure>
+
+        <figure role="listitem">
+          <img src="https://s2.glbimg.com/77lGb2xECv9-Vl3jTAs3G2vMpjY=/e.glbimg.com/og/ed/f/original/2014/10/23/yonaguni1.jpg" alt="Formação submersa tipo ruína" loading="lazy" />
+          <figcaption class="small muted">Ruínas submersas — estruturas antigas</figcaption>
+        </figure>
+
+        <figure role="listitem">
+          <img src="https://static.wixstatic.com/media/61ab98_c26f8e040f7e4acfacbeead3ab62c55a~mv2.jpg/v1/fill/w_1000,h_568,al_c,q_85,usm_0.66_1.00_0.01/61ab98_c26f8e040f7e4acfacbeead3ab62c55a~mv2.jpg" alt="Vida marinha colorida em profundidade média" loading="lazy" />
+          <figcaption class="small muted">Biodiversidade — ecossistemas ricos</figcaption>
+        </figure>
+
+        <figure role="listitem">
+          <img src="https://s2.glbimg.com/PFRaMkNYXPUzMBzQwDPYBma3tdM=/e.glbimg.com/og/ed/f/original/2014/10/23/smileyshark.jpg" alt="Tubarão nadando" loading="lazy" />
+          <figcaption class="small muted">Predadores — Tubarões e suas adaptações</figcaption>
+        </figure>
+
+        <figure role="listitem">
+          <img src="https://plus.unsplash.com/premium_photo-1749297157352-0ad5efaa1e2a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWlzdCVDMyVBOXJpb3MlMjBkbyUyMGZ1bmRvJTIwZG8lMjBtYXJ8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="Cena artística do fundo do mar com criaturas" loading="lazy" />
+          <figcaption class="small muted">Mistérios — paisagens impressionantes em profundidade</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" style="color:var(--accent);">Perguntas Frequentes</h2>
+
+      <details>
+        <summary>O que torna o fundo do mar tão misterioso?</summary>
+        <p class="small">Grande parte dele ainda não foi explorada, e há muitas criaturas e formações desconhecidas escondidas nas profundezas.</p>
+      </details>
+
+      <details>
+        <summary>Por que é tão difícil explorar o fundo do mar?</summary>
+        <p class="small">Por causa da escuridão, da pressão altíssima e das temperaturas extremas; por isso são usados robôs e submarinos especiais.</p>
+      </details>
+
+      <details>
+        <summary>Existem criaturas que brilham no fundo do mar?</summary>
+        <p class="small">Sim — muitos animais possuem bioluminescência, que serve para comunicação, caça e camuflagem.</p>
+      </details>
+
+      <details>
+        <summary>Qual é o lugar mais profundo do oceano?</summary>
+        <p class="small">A Fossa das Marianas, com cerca de 11.000 metros de profundidade.</p>
+      </details>
+
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section aria-label="Chamada para ação">
+      <h2 style="color:var(--accent);">Aprenda mais</h2>
+      <p class="small">Explore recursos, baixe o material educativo e compartilhe — juntos podemos proteger o fundo do mar.</p>
+      <p><a class="btn" href="#galeria">Ver Galeria</a> <a class="btn" href="#faq">Perguntas</a></p>
+    </section>
+
+    <!-- CRÉDITOS / FONTES -->
+    <section aria-label="Créditos e fontes" class="credits">
+      <h3 style="color:var(--accent);">Créditos / Fontes</h3>
+      <ul class="small">
+        <!-- TODO: atualizar links/fontes conforme pesquisa -->
+        <li><a href="https://marsemfim.com.br" target="_blank" rel="noopener">marsemfim.com.br</a></li>
+        <li><a href="https://g1.globo.com" target="_blank" rel="noopener">globo.com</a></li>
+        <li><a href="https://www.gov.br/mcti" target="_blank" rel="noopener">gov.br / MCTI</a></li>
+        <li>Imagens: Unsplash, arquivo público e bancos indicados pelo professor</li>
+      </ul>
+    </section>
+
+<!-- MODAL DE RECONHECIMENTO FACIAL -->
+<div id="cameraModal" class="modal-camera" aria-hidden="true">
+  <div class="modal-camera-content">
+    <button id="fecharModal" class="modal-camera-close" title="Fechar">❌</button>
+    <h2 class="modal-camera-title">Reconhecimento Facial</h2>
+    <div class="modal-video-wrap">
+      <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div class="modal-camera-controls">
+      <button id="tirarFoto" class="modal-camera-btn" title="Tirar foto">📸 Tirar Foto</button>
+    </div>
+    <p id="modalStatus" class="modal-camera-status">Aguardando...</p>
+    <canvas id="fotoCanvas" style="display:none;"></canvas>
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <div>© <span id="anoAtual"></span> Equipe CAOS. <a class="top-link" href="#titulo-principal">Voltar ao topo ↑</a></div>
+      <div class="small">Projeto: Fundo do Mar — <span class="muted">Mistérios do Fundo do Mar</span></div>
+    </footer>
+  </main>
+
+  <!-- CHATBOT ASIDE (inicialmente escondido) -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Oceandro"
+      agent-id="7e9ea28d-fc2a-4f18-a435-1d31267d9a34"
+      language-code="pt-br">
+    </df-messenger>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
